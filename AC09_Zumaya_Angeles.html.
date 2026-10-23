@@ -1,0 +1,402 @@
+# AC09_Zumaya_Angeles.html.
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Truck - Postres</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff5fc;
+            color: #48264f;
+        }
+
+        header {
+            background: #8057c7;
+            color: white;
+            padding: 18px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 15px;
+        }
+
+        /* MENÚ DE NAVEGACIÓN */
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        nav a {
+            display: inline-block;
+            background: #d94dad;
+            color: white;
+            text-decoration: none;
+            padding: 12px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background: #b72f91;
+        }
+
+        section {
+            padding: 30px 18px;
+            scroll-margin-top: 15px;
+        }
+
+        #inicio {
+            text-align: center;
+            background: #f7e5ff;
+            padding: 45px 20px;
+        }
+
+        #inicio h2 {
+            color: #c33c9a;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        #inicio p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .boton {
+            display: inline-block;
+            border: none;
+            background: #d94dad;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        h2.titulo {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #8057c7;
+        }
+
+        /* PRODUCTOS */
+        .productos {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit, minmax(210px, 1fr)
+            );
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .producto {
+            background: white;
+            border-radius: 18px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px #8057c722;
+        }
+
+        .producto .imagen {
+            font-size: 65px;
+            margin-bottom: 12px;
+        }
+
+        .producto h3 {
+            color: #c33c9a;
+            margin-bottom: 10px;
+        }
+
+        .producto p {
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .precio {
+            color: #8057c7;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        /* CARRITO Y FORMULARIO */
+        .contenedor-pedido {
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .caja {
+            background: white;
+            padding: 22px;
+            margin-bottom: 20px;
+            border-radius: 18px;
+            box-shadow: 0 4px 12px #8057c722;
+        }
+
+        .caja h3 {
+            color: #c33c9a;
+            margin-bottom: 15px;
+        }
+
+        .articulo-carrito {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0dcef;
+        }
+
+        .cantidad button {
+            padding: 5px 10px;
+            margin: 0 3px;
+            cursor: pointer;
+        }
+
+        .total {
+            font-size: 22px;
+            font-weight: bold;
+            text-align: right;
+            margin: 20px 0;
+        }
+
+        label {
+            display: block;
+            margin: 12px 0 6px;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d8b8df;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        form .boton {
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        #mensaje {
+            margin-top: 15px;
+            line-height: 1.5;
+            color: #8057c7;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #8057c7;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 500px) {
+            header h1 {
+                font-size: 25px;
+            }
+
+            nav a {
+                padding: 10px 12px;
+                font-size: 14px;
+            }
+
+            #inicio h2 {
+                font-size: 27px;
+            }
+
+            .articulo-carrito {
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header id="arriba">
+        <h1>🍓 Sweet Truck 🧁</h1>
+        <p>¡Un mundo dulce en cada bocado!</p>
+
+        <!-- ESTE ES EL MENÚ VISIBLE -->
+        <nav>
+            <a href="#inicio">🏠 Inicio</a>
+            <a href="#menu">🍓 Menú</a>
+            <a href="#carrito">🛒 Carrito</a>
+            <a href="#pedido">📝 Realizar pedido</a>
+            <a href="#nosotros">💗 Nosotros</a>
+        </nav>
+    </header>
+
+    <!-- INICIO -->
+    <section id="inicio">
+        <h2>¡Endulza tu día!</h2>
+
+        <p>
+            Bienvenido a Sweet Truck, tu lugar favorito para disfrutar
+            fresas con crema, crepas, waffles y bebidas deliciosas.
+        </p>
+
+        <p>💜 Postres deliciosos preparados para ti 💜</p>
+
+        <a href="#menu" class="boton">Ver nuestro menú</a>
+    </section>
+
+    <!-- MENÚ DE PRODUCTOS -->
+    <section id="menu">
+        <h2 class="titulo">🍰 Nuestro menú 🍰</h2>
+
+        <div class="productos" id="lista-productos"></div>
+    </section>
+
+    <!-- CARRITO -->
+    <section id="carrito">
+        <h2 class="titulo">🛒 Tu carrito</h2>
+
+        <div class="contenedor-pedido">
+            <div class="caja">
+                <h3>Productos seleccionados</h3>
+
+                <div id="productos-carrito">
+                    Tu carrito está vacío.
+                </div>
+
+                <div class="total">
+                    Total: <span id="total">$0.00</span>
+                </div>
+
+                <button class="boton" onclick="vaciarCarrito()">
+                    Vaciar carrito
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- REALIZAR PEDIDO -->
+    <section id="pedido">
+        <h2 class="titulo">💌 Realiza tu pedido</h2>
+
+        <div class="contenedor-pedido">
+            <div class="caja">
+                <form id="formulario">
+                    <label for="nombre">Nombre del cliente:</label>
+
+                    <input
+                        type="text"
+                        id="nombre"
+                        placeholder="Escribe tu nombre"
+                        required
+                        maxlength="60"
+                    >
+
+                    <label for="detalles">Detalles del pedido:</label>
+
+                    <textarea
+                        id="detalles"
+                        placeholder="Ejemplo: fresas con crema, extra chocolate..."
+                    ></textarea>
+
+                    <button type="submit" class="boton">
+                        Confirmar pedido
+                    </button>
+                </form>
+
+                <div id="mensaje" role="status"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section id="nosotros">
+        <h2 class="titulo">💗 Sobre Sweet Truck</h2>
+
+        <div class="contenedor-pedido">
+            <div class="caja">
+                <p>
+                    Sweet Truck es un food truck dedicado a la venta de
+                    postres y bebidas dulces. Nuestro objetivo es ofrecer
+                    productos deliciosos y una experiencia agradable
+                    para todos nuestros clientes.
+                </p>
+
+                <br>
+
+                <p>
+                    Nuestra misión es compartir momentos felices a través
+                    de nuestros postres.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h3>🍓 Sweet Truck 🧁</h3>
+        <p>Postres hechos con amor y dulzura.</p>
+        <p>Proyecto escolar de aplicación web.</p>
+    </footer>
+
+    <script>
+        // CATÁLOGO DE PRODUCTOS
+        const productos = [
+            {
+                id: 1,
+                nombre: "Fresas con crema",
+                descripcion: "Fresas frescas con crema dulce.",
+                precio: 60,
+                emoji: "🍓"
+            },
+            {
+                id: 2,
+                nombre: "Crepas",
+                descripcion: "Crepas dulces con chocolate y fruta.",
+                precio: 70,
+                emoji: "🥞"
+            },
+            {
+                id: 3,
+                nombre: "Waffles",
+                descripcion: "Waffles con fruta y chocolate.",
+                precio: 75,
+                emoji: "🧇"
+            },
+            {
+                id: 4,
+                nombre: "Malteadas",
+                descripcion: "Bebidas cremosas y refrescantes.",
+                precio: 65,
+                emoji: "🥤"
+            },
+            {
+                id: 5,
+                nombre: "Frappés",
+                descripcion: "Bebidas heladas de distintos sabores.",
+                precio: 60,
+                emoji: "🧋"
+            }
+        ];
+
+        // CARRITO DE
+- [ ] 
